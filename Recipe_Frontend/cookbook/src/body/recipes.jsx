@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./recipes.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getRecipes } from "../redux/recipeReducer/action";
+import { getRecipes, postFav } from "../redux/recipeReducer/action";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { addToFavorites } from "../redux/favReducer/action";
 
 export const Recipes = () => {
   const [page, setPage] = useState(1);
@@ -20,6 +22,11 @@ export const Recipes = () => {
     // delayedSearch(value);
   };
 
+  const handelFavorite = (recipeID) => {
+    dispatch(postFav(recipeID)); 
+    console.log("added to recipe")
+  };
+  
  
 
   useEffect(() => {
@@ -43,11 +50,15 @@ export const Recipes = () => {
           {Recipes?.map((ele) => {
             return (
               <div className="recipeCard" key={ele.id}>
-                <i></i>
-
+                
                 <img src={ele.image} />
-                <h3 className="recipeTitle">{ele.title}</h3>
+                <p className="recipeTitle">{ele.title} </p> <br/>
+                {/* <i onClick={handelFavorite(ele)}><FavoriteBorderIcon fontSize="large"/></i> */}
+                <button onClick={() => handelFavorite(ele)}>
+          <FavoriteBorderIcon fontSize="x-large"/>
+      </button>
               </div>
+              
             );
           })}
         </div>

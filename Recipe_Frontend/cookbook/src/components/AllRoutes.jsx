@@ -8,6 +8,7 @@ import { Getstarted } from '../body/get-started'
 import { Login } from '../body/login'
 import { Signup } from '../body/signup'
 import { Recipes } from '../body/recipes'
+import { Favorite } from '../body/favorite'
 
 export const AllRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const AllRoutes = () => {
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/signup' element={<Signup/>}></Route>
             <Route path='/recipes' element={<Recipes/>}></Route>
+            <Route path='/favorite' element={<Favorite/>}></Route>
         </Routes>
     </div>
   )

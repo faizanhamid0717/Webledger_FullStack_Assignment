@@ -1,4 +1,4 @@
-import { RECIPE_FAILURE, RECIPE_PENDING, RECIPE_SUCCESS } from "./actionType"
+import { ADD_TO_FAVORITES, RECIPE_FAILURE, RECIPE_PENDING, RECIPE_SUCCESS } from "./actionType"
 import axios from 'axios'
 
 const API = "https://api.spoonacular.com/recipes"
@@ -24,3 +24,10 @@ export const getRecipes=(page,query)=>(dispatch)=>{
         console.log(error)
     })
 }
+
+export const postFav = (recipeId) => {
+    return {
+      type: ADD_TO_FAVORITES,
+      payload: recipeId
+    };
+  };

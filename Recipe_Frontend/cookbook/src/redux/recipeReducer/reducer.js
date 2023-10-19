@@ -1,12 +1,13 @@
 
 
-import { RECIPE_FAILURE, RECIPE_PENDING, RECIPE_SUCCESS } from "./actionType"
+import { ADD_TO_FAVORITES, RECIPE_FAILURE, RECIPE_PENDING, RECIPE_SUCCESS } from "./actionType"
 
 
 const initialState = {
     isLoading:false,
     isError:false,
-    RecipesData:[]
+    RecipesData:[],
+    FavoriteData:[]
 }
 
 export const reducer =(state=initialState,{type,payload})=>{
@@ -20,6 +21,12 @@ export const reducer =(state=initialState,{type,payload})=>{
 
                 case RECIPE_FAILURE:
                     return {...state,isLoading:false,isError:true}
+
+                    case ADD_TO_FAVORITES:
+                        return {
+                            ...state,
+                             FavoriteData: [...state.FavoriteData,payload]
+                          };
 
                     default:
                         return state
