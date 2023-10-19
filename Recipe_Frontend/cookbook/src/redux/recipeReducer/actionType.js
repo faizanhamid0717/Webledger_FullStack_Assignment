@@ -1,0 +1,6 @@
+
+
+export const RECIPE_PENDING = "RECIPE_PENDING"
+export const RECIPE_SUCCESS = "RECIPE_SUCCESS"
+export const RECIPE_FAILURE = "RECIPE_FAILURE"
+

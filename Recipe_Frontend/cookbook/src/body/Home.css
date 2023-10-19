@@ -1,0 +1,160 @@
+
+
+.container {
+    /* border: 1px solid red; */
+    height: auto;
+    width: 98.5vw;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fcfcfa;
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/del079923-pb-pretzel-butterscoth-blondies-320-eb-index-64adbce2830ed.jpg?crop=1.00xw:1.00xh;0,0&resize=1600:*'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+ 
+}
+
+.recipe-image{
+    /* border: 1px solid rgb(25, 36, 194); */
+    height: 30vh;
+    width: 32vw;
+    background-color: white;
+    font-size: 40px;
+    margin-top: 35vh;
+    padding: 20px;
+    font-weight: 800;
+    /* margin-bottom: 10px; */
+    border-radius: 5px 30px 5px 30px;
+}
+.recipe-image:hover{
+    color: palevioletred;
+}
+
+
+.content{
+    /* border: 1px solid rgb(92, 90, 90); */
+    height: 80vh;
+    width: 50vw;
+    color: white;
+}
+
+.content h1{
+    font-size: 5vw;
+}
+.content p{
+    font-size: x-large;
+    color: white;
+}
+
+.container2{
+    /* border: 1px solid red; */
+    height: auto;
+    width: 98.5vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.leftcontent{
+    /* border: 1px solid blue; */
+    height: 85vh;
+    width: 42vw;
+    text-align: left;
+    padding-left: 100px;
+    color: white;
+    background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAD6AeYDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EACYQAQACAgEDBAIDAQAAAAAAAAABAgMREgQhMRMiQVFhcQUUMiP/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQIE/8QAFREBAQAAAAAAAAAAAAAAAAAAAEH/2gAMAwEAAhEDEQA/APngHQ5QAAAAAAAAAAAAABMVm29fCE1tNZ7ToVAAgAAAAAAAAAAAAAACYje/wCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7bdJgr1GXhe3GPtnlp6eS1fqRVABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHo/w1cV+qmuWkWifv4c/X2x26q/pRqsdmnQT6due+89nJkneS0/mUrUVAVkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATaIjxKGuPp8mWlrUjcVjcisgBAAAAAAAAAAAAAAAAAAAAAAG2LP6eO1eETMx2t9MZ7yAoAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOjp+rydPExWfbPmHOCptPK0z9ygBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF8nDl7PGhVABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG3S+n/Zx+rG6b90CqxSOE2mdT8Qza55pOS3p/532ZAACAAAAAAAAAAAAAAAAAAAAAAAAAOvoK9NeM1epma7r7JiN6kVyCbREWmIncRPZAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZiY8xMIWvktfXKd6VFABAAAAAAAAAAAAAAAAAAAAAAAAAAAF6cON+fnXt/YqgAgAAAAAAAAAAADevS5LYfWjXDevLDw0jNkjHOOLTwn4ZigAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADsr0uGegnPOWYybmIo4wFABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGk5InDFOEbid8vkVmAIAAAAAAAAAAAAAAAAAAAAAAJiJnwRG1ovMVmsfIqgAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADpx0rGGbTETP5c8+V9zaIiFJjU6kVAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADamDlgtlm0REeI35Yp3OtIFABAAAAAAAAAAAAExaY8SgAAAAAAAAAAAAATWIm0RPaF7YtRuJ2zTNpkVAAgAAAAAAAAAAAAAAAAAAmI2RG0xbVZjXf7FXz1x1tHpWm0aje4+WQAACAAAAAAAAAAAAAAAAJ2gABfHjnJbjXW/zK9sdcX+7bt9R3gViL2vWY1FIhQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABrNox8qRETPjkyAUAEAAAAAAAAAAAAAAAAAAWiK67zO08661wj9qAqdoAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATtAAAAAAAAAAAAAAAAAAACe2vPdAAAAAAA01/yj9iswBAAAFq+LfoVUAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//9k=');
+}
+
+.leftcontent h2{
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.leftcontent p{
+    font-size: 20px;
+}
+
+.get-started2 {
+    background-color: orange;
+    height: 10vh;
+    width: 14vw;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+border-radius: 5px 25px 5px 25px;
+border: 0px;
+cursor: pointer;
+
+}
+
+.rightimage{
+    /* border: 1px solid blue; */
+    height: 85vh;
+    width: 49.2vw;
+}
+
+.rightimage img{
+    height: 85vh;
+    width: 49.2vw;
+}
+
+@media  screen and (max-width:900px) {
+    .container{
+        height: auto;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        
+    }
+
+    .recipe-image{
+        height: auto;
+        width: 20vh;
+        font-size: medium;
+        margin: auto;
+    }
+    
+    .content{
+        height: auto;
+        width: auto;
+    }
+
+    .container2{
+        height: auto;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .leftcontent {
+        height: auto;
+        width: auto;   
+        padding-left: 20px; 
+    }
+   .leftcontent h2{
+    font-size: xx-large;
+   } 
+
+   .leftcontent p{
+    font-size: medium;
+   }
+
+  .leftcontent .get-started2{
+    height: auto;
+    width: auto;
+    background-color: orange;
+    font-size: medium;
+    margin-bottom: 10px;
+  }
+
+    .rightimage{
+        height: auto;
+        width: auto;
+
+    }
+
+    .rightimage img{
+        height: auto;
+    }
+}
+

@@ -1,0 +1,108 @@
+
+
+.recipeContainer{
+    /* border: 1px solid red; */
+    height: auto;
+    width: 95vw;
+    margin: auto;
+    padding: 5px;
+     display: flex;
+    gap: 20px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+.recipeCard{
+    /* border: 1px solid green; */
+    height: 60vh;
+    width: 30vw;
+   
+}
+
+.recipeCard img{
+    height:45vh;
+    width: 100%;
+}
+
+.prev{
+    height: 7vh;
+    width: 12vw;
+    border: 0px;
+    background-color: #23385b;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    
+}
+.count{
+    height: 7vh;
+    width: 5vw;
+    border: 0px;
+    background-color: #23385b;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.next{
+    height: 7vh;
+    width: 12vw;
+    border: 0px;
+    background-color: #23385b;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.search{
+    height: 8vh;
+    width: 40vw;
+    border-radius: 5px;
+    font-size: large;
+    border: .1px solid rgb(137, 133, 133);
+    margin-top: 20px;
+}
+.search::placeholder{
+    padding-left: 10px;
+}
+
+@media screen and (max-width:900px){
+    .recipeContainer{
+        height: auto;
+        /* width: auto; */
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .recipeCard{
+        height: auto;
+        width: auto;
+    }
+
+    .recipeCard img{
+        height: auto;
+        width: auto;
+    }
+
+    .prev{
+        height: auto;
+        width: auto;
+        font-size: small;
+        padding: 10px;
+    }
+    .count{
+        height: auto;
+        width: auto;
+        font-size: small;
+        padding: 10px;
+    }
+    .next{
+        height: auto;
+        width: auto;
+        font-size: small;
+        padding: 10px;
+    }
+    
+}
+

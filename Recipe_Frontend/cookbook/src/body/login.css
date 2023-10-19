@@ -1,0 +1,96 @@
+
+
+.loginContainer{
+    /* border: 1px solid blue; */
+    height: 86vh;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loginImg{
+    /* border: 1px solid red; */
+    height: 86vh;
+    width: 45vw;
+}
+.loginInput{
+    /* border: 1px solid red; */
+    height: 69.4vh;
+    width: 45vw;
+    /* background-color: #e0e9ea; */
+    padding-top: 100px;
+    font-size: 23px;
+    font-family: cursive;
+    font-weight: 900;
+    background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCADQArQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCsAUgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+
+}
+
+.loginInput input{
+    height: 7vh;
+    width: 30vw;
+    border-radius: 5px;
+    border: .1px solid gainsboro;
+}
+
+.loginInput ::placeholder{
+    padding-left: 10px;
+}
+
+.loginBtn{
+    height: 7vh;
+    width: 10vw;
+    border-radius: 30px;
+    background-color: #ddf0f1;
+    font-size: large;
+    font-weight: 700;
+}
+
+
+.loginImg{
+    background-image: url('https://media.istockphoto.com/id/607299402/photo/culinary-background-with-spices-and-recipe-book.jpg?s=612x612&w=0&k=20&c=IpEqVDztshwHdB6rnprLfOSbh1rtz8aKy5IUIWTmxzw=');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+}
+
+@media screen and (max-width:900px){
+    .loginContainer{
+        height: auto;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+
+    }
+
+    .loginImg{
+        height: 50vh;
+        width: 99.2vw;
+
+    }
+
+    .loginInput{
+        height: auto;
+        width: auto;
+        font-size: large;
+    }
+    
+    .loginInput input{
+        height: 5vh;
+        width: 50vw;
+        font-size: x-large;
+    }
+
+    .loginBtn{
+        height: auto;
+        width: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}

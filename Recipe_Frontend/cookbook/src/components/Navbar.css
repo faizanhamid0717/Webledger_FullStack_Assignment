@@ -1,0 +1,174 @@
+
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white;
+    padding: 10px 20px;
+    height: 10vh;
+    border-bottom: .1px solid rgb(233, 229, 229);
+    position: sticky;
+    
+}
+
+
+
+.logo {
+    font-size: 35px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    
+}
+
+
+.logo-code {
+    color: #344e6b; /* Replace with your desired color for 'Code' */
+    margin-right: 5px;
+}
+
+.logo-morpher {
+    color: #344e6b; /* Replace with your desired color for 'Morpher' */
+}
+
+/* ... (previous styles) */
+
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    /* border: 1px solid red; */
+    width: 3vw;
+    height: 7vh;
+    border-radius: 50%;
+    background-color: rgb(228, 224, 202);
+   
+}
+
+.menu-icon {
+    font-size: 30px;
+    color: rgb(1, 1, 1);
+    cursor: pointer;
+    display: none; /* Hide the menu icon by default */
+    background-color: orange;
+    border-radius: 5px 25px 5px 25px;
+   
+}
+
+
+/* .profile-image img{
+    border-radius: 50%;
+    width: 3vw;
+    height: 7vh;
+} */
+
+.auth-buttons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+     padding-left: 10px;
+    font-weight: 600;
+    color: #655f5f;
+    /* border: 2px solid red; */
+    width: 40vw;
+    height: 8vh;
+}
+
+.auth-buttons a {
+      font-size: 16px;
+      text-decoration: none;
+      color:#344e6b ;
+      margin-top: 14px;
+} 
+
+.get-started{
+    background-color: #344e6b;
+    height: 8vh;
+    width: 11vw;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+border-radius: 5px 25px 5px 25px;
+border: 0px;
+cursor: pointer;
+
+}
+
+
+/* Media query for small and medium screens */
+@media screen and (max-width: 850px) {
+    .nav-items {
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #5f5c5c;
+        padding: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        display: none; 
+        border-radius: 5px;
+        color: white;
+        /* height: ; */
+        
+    }
+
+    .auth-buttons{
+        height: 10vh;
+        width: auto;
+        /* border: 2px solid white; */
+        gap: 10px;
+        color: white;
+    }
+    .auth-buttons a{
+        height: auto;
+        color: white;
+        
+    }
+    .get-started{
+        height: 7vh;
+        width: auto;
+    }
+    .menu-icon {
+        font-size: 40px; /* Adjust the font size as needed */
+        display: block;
+    }
+
+    .nav-items.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #333;
+        padding: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        color: rgb(255, 245, 245);
+        /* border: 1px solid greenyellow; */
+    }
+
+    /* .profile-image,
+    .auth-buttons {
+        display: block;
+        margin: 10px 0;
+        
+    } */
+}
+
+/* @media screen and (min-width:768px)and(max-width:1200px) {
+    .auth-buttons{
+        width: auto;
+        border: 3px solid black;
+    }
+        .get-started{
+            height: 5vh;
+            width: auto;
+        }
+} */

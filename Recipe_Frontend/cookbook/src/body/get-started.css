@@ -1,0 +1,145 @@
+
+
+.container1{
+    /* border: 1px solid red; */
+    height: 90vh;
+    width: 93.6vw;
+    margin: auto;
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/221011-delish-seo-spider-taco-ring-0984-eb-1666030822-64f0e6eb112a0.jpeg?crop=1.00xw:0.754xh;0,0.0723xh&resize=1600:*');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+
+
+}
+
+.container1 h1{
+    font-size: 75px;
+    font-weight: 800;
+    color:white
+}
+
+.container1 p{
+    color: rgb(238, 231, 231);
+    font-size: 20px;
+}
+
+
+.container2{
+     /* border: 1px solid red; */
+     height: auto;
+     width: 98.5vw;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 40px;
+}
+
+.left_content{
+    /* border: 1px solid blue; */
+    height: 70vh;
+    width: 42vw;
+    text-align: center;
+    padding: 50px;
+    color: black;
+    background-color: rgb(253, 253, 253);
+
+}
+
+.left_content h2{
+    font-size: 45px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.left_content p{
+    font-size: 20px;
+}
+
+.get-started_2 {
+    background-color: rgb(24, 186, 24);
+    height: 10vh;
+    width: 14vw;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+border-radius: 5px 25px 5px 25px;
+border: 0px;
+cursor: pointer;
+
+}
+
+.rightimage{
+    /* border: 1px solid blue; */
+    height: 85vh;
+    width: 49.2vw;
+    background-image: url('https://uploads-ssl.webflow.com/63bb7fe09d70bb7dc8e86719/63bb7fe19d70bb5461e8679c_blob_group_4.svg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+
+}
+
+.rightimage img{
+    height: 70vh;
+    width: 30vw;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+
+@media screen and (max-width:900px){
+    .container1{
+        height: auto;
+        width: auto;
+       /* background-size: 55%; */
+       
+
+    }
+
+    .container1 h1{
+        font-size: 50px
+    }
+
+    .container1 p{
+        font-size: 10px;
+    }
+    
+
+    .container2{
+        height: auto;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .left_content {
+        height: auto;
+        width: auto;   
+        padding-left: 20px; 
+    }
+   .left_content h2{
+    font-size: xx-large;
+   } 
+
+   .left_content p{
+    font-size: medium;
+   }
+
+  .left_content .get-started2{
+    height: auto;
+    width: auto;
+    background-color: orange;
+    font-size: medium;
+    margin-bottom: 10px;
+  }
+
+    .rightimage{
+        height: auto;
+        width: auto;
+
+    }
+
+    .rightimage img{
+        height: auto;
+        width: 60%;
+    }
+}
