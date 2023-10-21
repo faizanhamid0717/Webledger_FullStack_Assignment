@@ -2,22 +2,26 @@ import React, { useState } from 'react'
 import './login.css'
 import { useDispatch } from 'react-redux'
 import { postLogin } from '../redux/authReducer/action'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 export const Login = () => {
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   // console.log(email,password)
 const dispatch=useDispatch()
+const navigate = useNavigate()
+const location=useLocation()
 
   const handelLogin=(e)=>{
     e.preventDefault()
    let obj={email,password}
    
-   dispatch(postLogin(obj))
-   .then(()=>{
-    setEmail('')
-    setPassword('')
+   dispatch(postLogin(obj,navigate)).then(()=>{
+    navigate((location.state),{replace:true})
+    
    })
+   setEmail('')
+    setPassword('')
   }
 
   return (
@@ -33,6 +37,9 @@ const dispatch=useDispatch()
                    <br/>
                    <br/>
                    <button className='loginBtn' onClick={handelLogin}>login</button>
+                   <br/>
+                   <br/>
+                   <Link to={'/signup'}><button className='createacount'>Create Account</button> </Link>
             </div>
             <div className='loginImg'>
 

@@ -16,8 +16,8 @@ app.use(express.json())
 // http://localhost:9090/
 
 app.use("/user",userRouter)
-app.use(auth)
-app.use("/recipes",recipeRouter)
+// app.use(auth)
+app.use("/recipes",auth,recipeRouter)
 
 app.listen(process.env.PORT,async()=>{
     console.log(`server is running on PORT ${process.env.PORT}`)

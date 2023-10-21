@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRecipes, postFav } from "../redux/recipeReducer/action";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { addToFavorites } from "../redux/favReducer/action";
+import { useNavigate } from "react-router-dom";
 
 export const Recipes = () => {
   const [page, setPage] = useState(1);
@@ -11,9 +12,12 @@ export const Recipes = () => {
 
   const Recipes = useSelector((store) => store.recipeReducer.RecipesData);
   // console.log("Recipes from store",Recipes)
+  const token = useSelector((store) => store.authReducer.Token);
+  console.log("token",token)
 
   const Loading = useSelector((store) => store.recipeReducer.isLoading);
   const dispatch = useDispatch();
+  const navigate=useNavigate()
 
   const handleSearch = (e) => {
     console.log("calls");
@@ -23,8 +27,8 @@ export const Recipes = () => {
   };
 
   const handelFavorite = (recipeID) => {
-    dispatch(postFav(recipeID)); 
-    console.log("added to recipe")
+    dispatch(postFav(recipeID,token,navigate)); 
+    console.log("added to recipe",recipeID,token)
   };
   
  
@@ -53,10 +57,10 @@ export const Recipes = () => {
                 
                 <img src={ele.image} />
                 <p className="recipeTitle">{ele.title} </p> <br/>
-                {/* <i onClick={handelFavorite(ele)}><FavoriteBorderIcon fontSize="large"/></i> */}
-                <button onClick={() => handelFavorite(ele)}>
-          <FavoriteBorderIcon fontSize="x-large"/>
-      </button>
+                
+                <button  className='addtofav' onClick={() => handelFavorite(ele)}>
+                <FavoriteBorderIcon fontSize="large" sx={{ color: "white"}}/>
+               </button>
               </div>
               
             );

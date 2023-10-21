@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './signup.css'
 import { useDispatch } from 'react-redux'
 import { postSignup } from '../redux/authReducer/action'
+import { useNavigate } from 'react-router-dom'
 
 export const Signup = () => {
     const [name,setName] = useState("")
@@ -10,13 +11,13 @@ export const Signup = () => {
     const [gender,setGender] = useState("")
     const [city,setCity] = useState("")
     // console.log(name,email,password,gender,city)
-
+    const navigate=useNavigate()
     const dispatch=useDispatch()
 
 const handelSingup=(e)=>{
   e.preventDefault()
     let userData = {name,email,password,gender,city}
-   dispatch(postSignup(userData)).then(()=>{
+   dispatch(postSignup(userData,navigate)).then(()=>{
     setName("")
     setEmail("")
     setPassword('')
@@ -42,7 +43,7 @@ const handelSingup=(e)=>{
                    <br/>
                    <br/>
                    <select onChange={(e)=>setGender(e.target.value)}>
-                       <option value={''}>Select</option>
+                       <option value={'gender'}>Select</option>
                        <option value={'male'}>Male</option>
                        <option value={'female'}>Female</option>
                        <option value={'other'}>Other</option>
@@ -53,6 +54,9 @@ const handelSingup=(e)=>{
                    <br/>
                    <br/>
                    <button className='signupBtn' onClick={handelSingup}>signup</button>
+                    <br/>
+                    OR <br/> Already have an account | <a href='login'>login</a> 
+                
             </div>
             <div className='signupImg'>
 

@@ -1,31 +1,38 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getFavorites } from "../redux/favReducer/action";
 
 export const Favorite = () => {
-const favorite = useSelector((store)=>store.recipeReducer.FavoriteData)
-console.log('fav',favorite)
-const Loading = useSelector((store) => store.recipeReducer.isLoading);
+  const token = useSelector((store) => store.authReducer.Token);
+
+  const favoriteData = useSelector((store) => store.recipeReducer.FavoriteData);
+  const authorID = favoriteData.map((item) => item.authorID);
+  // console.log("authorID",authorID)
+
+  const favoriteLIST = useSelector((store) => store.favReducer.FavoriteList);
+  console.log("fav-page", favoriteLIST);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getFavorites(token, authorID));
+    }
+  }, [token]);
 
   return (
     <div>
-          {Loading ? (
-        <h1>Loading ...</h1>
-      ) : (
-        <div className="recipeContainer">
-          {favorite?.map((ele) => {
-            return (
-              <div className="recipeCard" key={ele.id}>
-                
-                <img src={ele.image} />
-                <p className="recipeTitle">{ele.title} </p> <br/>
-                   <button><DeleteOutlineIcon fontSize="x-large"/></button>
-              </div>
-              
-            );
-          })}
-        </div>
-      )}
+      <h1>Favorite</h1>
+      <div className="recipeContainer">
+        {favoriteLIST?.map((ele) => {
+          return (
+            <div className="recipeCard" key={ele._id}>
+              <img src={ele.image} />
+              <p className="recipeTitle">{ele.title} </p> <br />
+            </div>
+          );
+        })}
+      </div>
     </div>
-  )
-}
+  );
+};

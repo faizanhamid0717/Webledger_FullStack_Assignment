@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 // import localImage from './images/Fazu pic.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { userSignout } from '../redux/authReducer/action';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,6 +14,17 @@ const Navbar = () => {
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
+
+    const auth=useSelector((store)=>store.authReducer.isAuth)
+    console.log("auth",auth)
+
+const dispatch=useDispatch()
+const navigate=useNavigate()
+
+    const handelSignout=()=>{
+        dispatch(userSignout())
+        navigate("/")
+    }
 
     return (
         <nav className="navbar">
@@ -26,14 +39,24 @@ const Navbar = () => {
             <div className={`nav-items ${isMenuOpen ? 'active' : ''}`}>
                
                 <div className="auth-buttons">
-                   {/* <span className="logo-code">Recipes</span>
-                   <span className="logo-morpher">About us</span> */}
+                  
                    <Link to={'/recipes'}><a href=''>Recipes</a> </Link>
-                   <a href=''>About us</a>
-                   {/* <a href=''>Tips&Tools</a> */}
+                   <a>About us</a>
+            
                   <Link to={'/favorite'}><i><FavoriteBorderIcon fontSize="large"/></i></Link> 
             
-                  <Link to={"/getstarted"} style={{textDecoration:"none"}}><button className='get-started'>GET STARTED</button> </Link> 
+            {auth ? (
+                <button onClick={handelSignout} className='get-started'>
+                Signout
+            </button> 
+            ) : (
+                <button className='get-started'>
+                     <Link to={"/getstarted"} style={{textDecoration:"none"}}>GET STARTED </Link> 
+                 </button> 
+            )}
+                  
+                
+                  
                 </div>
             </div>
             <div className="menu-icon" onClick={toggleMenu}>&#9776;</div>

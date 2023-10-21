@@ -25,12 +25,12 @@ userRouter.post("/register",async(req,res)=>{
         bcrypt.hash(password,5,async(err,hash)=>{
             const user = new UserModel({name,email,gender,city,password:hash})
             await user.save()
-            res.status(200).send({"msg":"new user has been registered"})
+            res.status(200).send({msg:"new user has been registered"})
         })
 
         
     } catch (error) {
-        res.status(400).send({"msg":error.message})
+        res.status(400).send({msg:error.message})
     }
 
 })
@@ -50,21 +50,21 @@ userRouter.post("/login",async(req,res)=>{
         //  }
 
         if(user){
-            bcrypt.compare(password,user.password,(err,result)=>{
+            bcrypt.compare(password,user.password,(error,result)=>{
                 if(result){
                      const Token = jwt.sign({authorID:user._id},'fazu')
-                     res.status(200).send({"msg":"Login Successfully new user", "Token":Token})
+                     res.status(200).send({msg:"Login Successfully new user", "Token":Token})
                 }else{
-                    res.status(200).send({"msg":"wrong cadestrial.."})
+                    res.status(400).send({msg:"wrong cadestrial.."})
                 }
 
             })
         }else{
-            res.status(200).send({"msg":"User Does not exist"})
+            res.status(400).send({msg:"User Does not exist"})
         }
 
       } catch (error) {
-        res.status(400).send({"err":error.message})
+        res.status(400).send({error:error.message})
       }
 })
 

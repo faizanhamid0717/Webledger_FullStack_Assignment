@@ -1,6 +1,6 @@
 
 
-import { ADD_TO_FAVORITES, RECIPE_FAILURE, RECIPE_PENDING, RECIPE_SUCCESS } from "./actionType"
+import { ADD_TO_FAVORITES, DELETE_FROM_FAVORITES_SUCCESS, RECIPE_FAILURE, RECIPE_PENDING, RECIPE_SUCCESS } from "./actionType"
 
 
 const initialState = {
@@ -24,10 +24,11 @@ export const reducer =(state=initialState,{type,payload})=>{
 
                     case ADD_TO_FAVORITES:
                         return {
-                            ...state,
-                             FavoriteData: [...state.FavoriteData,payload]
+                            ...state,isLoading:false,
+                             FavoriteData: [...state.FavoriteData,payload],
                           };
 
+                          
                     default:
                         return state
     }

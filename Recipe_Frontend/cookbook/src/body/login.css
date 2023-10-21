@@ -49,8 +49,19 @@
     background-color: #ddf0f1;
     font-size: large;
     font-weight: 700;
+    cursor: pointer;
 }
 
+.createacount{
+    height: 6vh;
+    width: 20vw;
+    background-color: rgb(31, 31, 100);
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    border: 0px;
+}
 
 .loginImg{
     background-image: url('https://media.istockphoto.com/id/607299402/photo/culinary-background-with-spices-and-recipe-book.jpg?s=612x612&w=0&k=20&c=IpEqVDztshwHdB6rnprLfOSbh1rtz8aKy5IUIWTmxzw=');
@@ -88,6 +99,13 @@
     }
 
     .loginBtn{
+        height: auto;
+        width: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .createacount{
         height: auto;
         width: auto;
         padding: 10px;

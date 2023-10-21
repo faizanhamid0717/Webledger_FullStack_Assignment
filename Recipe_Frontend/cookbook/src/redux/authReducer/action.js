@@ -1,4 +1,6 @@
-import { REQUEST_FAILURE, REQUEST_PENDING ,LOGIN_REQUEST_SUCCESS, SIGNUP_REQUEST_SUCCESS} from "./actionType"
+
+import { Navigate } from "react-router-dom"
+import { REQUEST_FAILURE, REQUEST_PENDING ,LOGIN_REQUEST_SUCCESS, SIGNUP_REQUEST_SUCCESS, USERSIGN_OUT} from "./actionType"
 import axios from 'axios'
 
 const signupRequestAction=()=>{
@@ -14,26 +16,51 @@ const signupFailureAction=()=>{
 }
 
 
-export const postSignup=(userData)=>(dispatch)=>{
+export const postSignup=(userData,navigate)=>(dispatch)=>{
      dispatch(signupRequestAction())
     return axios
-     .post('https://handsome-shawl-lion.cyclic.app/user/register',userData)
+     .post('http://localhost:9090/user/register',userData)
      .then((res)=>{
-        console.log("res",res)
+        console.log("res",res.data)
         dispatch(signupSuccessAction(res.data))
+        alert("Sign up successfully")
+         navigate('/login') 
      }).catch((error)=>{
         dispatch(signupFailureAction(error))
+        if (error.response && error.response.data && error.response.data.msg) {
+            alert(error.response.data.msg);
+          } else {
+            alert("An error occurred during signup.");
+          }
      })
 }
 
-export const postLogin=(obj)=>(dispatch)=>{
+export const postLogin=(obj,navigate)=>(dispatch)=>{
     dispatch({type:REQUEST_PENDING})
     return axios
-    .post('https://handsome-shawl-lion.cyclic.app/user/login',obj)
+    .post('http://localhost:9090/user/login',obj)
     .then((res)=>{
-        console.log('login res',res.data.token)
-        dispatch({type:LOGIN_REQUEST_SUCCESS,payload:res.data.token})
-    }).catch((error)=>{
-        dispatch({type:REQUEST_FAILURE})
+        console.log('login res',res.data.Token)
+        dispatch({type:LOGIN_REQUEST_SUCCESS,payload:res.data.Token})
+        alert("Login Successfully")
+        console.log("Navigating---",navigate)
+        navigate('/')
+          
     })
+    .catch((error)=>{
+        dispatch(signupFailureAction(error))
+        if (error.response && error.response.data && error.response.data.msg) {
+            alert(error.response.data.msg);
+          } else {
+            alert('An error occurred during login.');
+          }
+         
+    })
+}
+
+
+ export const userSignout=()=>{
+    return{
+        type:USERSIGN_OUT
+    }
 }

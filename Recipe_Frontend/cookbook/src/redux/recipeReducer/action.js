@@ -1,9 +1,10 @@
+import { useSelector } from "react-redux"
 import { ADD_TO_FAVORITES, RECIPE_FAILURE, RECIPE_PENDING, RECIPE_SUCCESS } from "./actionType"
 import axios from 'axios'
 
 const API = "https://api.spoonacular.com/recipes"
-const APIKey = 'b0d95d8b334c4fe196eac718c235a50b'
-let limit=9
+const APIKey = 'eeca4ec891a544cfa6051484f74d553a'
+let limit=12
 
 export const getRecipes=(page,query)=>(dispatch)=>{
     dispatch({type:RECIPE_PENDING})
@@ -25,9 +26,28 @@ export const getRecipes=(page,query)=>(dispatch)=>{
     })
 }
 
-export const postFav = (recipeId) => {
-    return {
-      type: ADD_TO_FAVORITES,
-      payload: recipeId
-    };
-  };
+
+
+export const postFav = (recipeID,token,navigate) =>(dispatch)=>{
+    dispatch({type:RECIPE_PENDING})
+     
+    if(token){
+        axios.post('http://localhost:9090/recipes/create', recipeID, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }).then((res) => {
+            console.log("addtofav", res.data);
+            dispatch({type:ADD_TO_FAVORITES,payload:res.data})
+            alert("added successfully")
+            navigate("/recipes")
+          })
+    }else{
+        alert('Please login first')
+        navigate("/login")
+    }
+   
+  
+} 
+    
+  

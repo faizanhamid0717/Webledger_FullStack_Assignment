@@ -27,15 +27,15 @@
 
 
 .logo-code {
-    color: #344e6b; /* Replace with your desired color for 'Code' */
+    color: #344e6b; 
     margin-right: 5px;
 }
 
 .logo-morpher {
-    color: #344e6b; /* Replace with your desired color for 'Morpher' */
+    color: #344e6b; 
 }
 
-/* ... (previous styles) */
+
 
 .nav-items {
     display: flex;
@@ -88,10 +88,10 @@
 } 
 
 .get-started{
-    background-color: #344e6b;
+    /* background-color: #344e6b; */
     height: 8vh;
     width: 11vw;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: medium;
 border-radius: 5px 25px 5px 25px;
@@ -154,21 +154,4 @@ cursor: pointer;
         /* border: 1px solid greenyellow; */
     }
 
-    /* .profile-image,
-    .auth-buttons {
-        display: block;
-        margin: 10px 0;
-        
-    } */
 }
-
-/* @media screen and (min-width:768px)and(max-width:1200px) {
-    .auth-buttons{
-        width: auto;
-        border: 3px solid black;
-    }
-        .get-started{
-            height: 5vh;
-            width: auto;
-        }
-} */

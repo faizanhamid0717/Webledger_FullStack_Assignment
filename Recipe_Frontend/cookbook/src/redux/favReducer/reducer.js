@@ -1,10 +1,10 @@
-import { FAVORITE_PENDING, FAVORITE_SUCCESS, FAVORITE_FAILURE, ADD_TO_FAVORITES } from "./actionType";
+import { FAVORITE_PENDING, FAVORITE_SUCCESS, FAVORITE_FAILURE, DELETE_FAVORITE} from "./actionType";
 
 
 const initialState = {
   isLoading: false,
   isError: false,
-  FavoriteData: []
+  FavoriteList: []
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -13,16 +13,12 @@ export const reducer = (state = initialState, { type, payload }) => {
       return { ...state, isLoading: true };
 
     case FAVORITE_SUCCESS:
-      return { ...state, isLoading: false, FavoriteData: payload };
+      return { ...state, isLoading: false, FavoriteList: payload };
 
     case FAVORITE_FAILURE:
       return { ...state, isLoading: false, isError: true };
 
-    case ADD_TO_FAVORITES:
-      return {
-        ...state,
-        FavoriteData: [...state.FavoriteData, payload]
-      };
+     
 
     default:
       return state;

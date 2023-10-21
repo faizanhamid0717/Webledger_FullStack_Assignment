@@ -9,6 +9,7 @@ import { Login } from '../body/login'
 import { Signup } from '../body/signup'
 import { Recipes } from '../body/recipes'
 import { Favorite } from '../body/favorite'
+import { PrivateRoute } from './privateRoute'
 
 export const AllRoutes = () => {
   return (
@@ -18,8 +19,8 @@ export const AllRoutes = () => {
             <Route path='/getstarted' element={<Getstarted/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/signup' element={<Signup/>}></Route>
-            <Route path='/recipes' element={<Recipes/>}></Route>
-            <Route path='/favorite' element={<Favorite/>}></Route>
+            <Route path='/recipes' element={ <PrivateRoute> <Recipes/> </PrivateRoute> }></Route>
+            <Route path='/favorite' element={ <PrivateRoute><Favorite/></PrivateRoute> }></Route>
         </Routes>
     </div>
   )
