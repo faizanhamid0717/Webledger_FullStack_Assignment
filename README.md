@@ -4,6 +4,12 @@
 The Cookbook App is a web application designed to help users discover, save, and manage their favorite recipes.
 It provides features like user registration, login, and the ability to add recipes to favorites. Users can also search for recipes and view their own saved favorites.
 
+Visit the deployed application here.
+## Live Demo
+
+- [Frontend](https://cookbook-five.vercel.app/)
+- [Backend](https://backend-cookbook-app.onrender.com/)
+
 ## Technologies Used
 Frontend:HTML,CSS,Javascript, React, Redux
 Backend: Node.js, Express, MongoDB
@@ -31,4 +37,4 @@ Install dependencies using npm install.
 Start the backend server using npm start in the server directory.
 Start the frontend using npm start in the client directory.
 
-Visit the deployed application here.
+
